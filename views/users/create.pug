@@ -1,0 +1,26 @@
+
+doctype html
+head
+    title Student Management
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+.container
+    h2.text-center create user
+    a(href="/users/" class="btn btn-primary ") Back
+    form(action='/users/store' method='POST')
+        .form-group
+            label(for='name') Name:
+            input.form-control(type='text'  name='name' autofocus required)
+        .form-group
+            label(for='phone') phone:
+            input.form-control(type='number'  name='phone' required)
+        .form-group
+            label(for='email') Email:
+            input.form-control(type='email'  name='email' required)
+        .form-group
+            label(for='balance') Balance:
+            input.form-control(type='number'  name='balance' required)
+        button.btn.btn-primary(type='submit') Add 

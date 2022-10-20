@@ -1,0 +1,55 @@
+
+doctype html
+head
+    title Transaction  
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+.container
+    h2.text-center Transaction List
+    a(href="/transfer/create/" class="btn btn-primary ") Make Transaction
+    .datatable-scroll
+        table.table
+            thead
+                tr
+                    th Trx. ID
+                    th Original amount
+                    th From account 
+                    th Remark 
+                    th Transaction date
+                    th To account
+                    th Sender
+            tbody
+            each student in transfer
+                tr
+                    td=student.id
+                    td=student.amount + ' $'
+                    td=student.sender_id
+                    td=student.remark
+                    td=student.created_at
+                    td=student.recieve_id
+                    td=student.name
+                    td
+                        a(href="/transfer/view/"+student.id class='btn btn-primary') View Transaction
+                            
+    //- .datatable-footer
+        #DataTables_Table_0_paginate.dataTables_paginate.paging_simple_numbers
+        -var i = 1;  
+            nav(aria-label='Page navigation example')
+                ul.pagination
+                    li.page-item
+                        a.page-link(href='#') Page:
+                            span= Page
+                            
+                    li.page-item
+                        a.page-link(href='/students/?page='+(i-1+i)  aria-label='Previous')
+                            span(aria-hidden='true') &laquo;
+                            span.sr-only Previous
+                    li.page-item
+                        a.page-link(href='/students/?page='+(+page+i)  aria-label='Next')
+                            span(aria-hidden='true') &raquo;
+                            span.sr-only Next
+
+

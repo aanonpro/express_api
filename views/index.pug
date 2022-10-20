@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  html
+  head
+  body
+    .col-md-6.mx-auto
+        img.mx-auto.d-block.rounded.mb-4(src='https://o.remove.bg/downloads/b459c6b5-4789-415c-8132-ab754f5113d3/png-transparent-wire-transfer-bank-account-payment-money-bank-angle-service-logo-thumbnail-removebg-preview.png',
+        alt='bank transfer' width='120px')
+        form(method='post' action='/transfer/store')
+          .mb-3
+            label.form-label Account Number for 
+            input.form-control.form-control-lg(type='number', placeholder='xxxx-xxxx-xxxx-xxxx', maxlength='9', oninput='javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);')
+
+          .mb-3
+            label.form-label Amount
+            input.form-control.form-control-lg(type='number' name='amount' placeholder='Amount')
+          .mb-3
+            label.form-label Remark
+            input.form-control.form-control-lg(type='text' name='ramark' placeholder='Remark (Optional)')
+          .d-grid.gap-2
+            button.btn.btn-lg.btn-danger.mt-4(type='submit') Transfer bank
