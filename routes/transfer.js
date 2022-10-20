@@ -56,8 +56,9 @@ transferRouter.delete('/:id', auth, deleteTransfer);
 
 transferRouter.put('/:id', auth, updateTransfer);
 
-transferRouter.get('/login', function(req, res, next) {
-  res.render('auth/signin');
-})
+// transferRouter.get('/login', function(req, res, next) {
+// //   res.render('auth/signin');
+// res.json({message: "transfer needed login please"})
+// });
 
 module.exports = transferRouter;

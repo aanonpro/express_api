@@ -22,7 +22,8 @@ router.get('/', auth, function(req, res, next) {
 // });
 
 router.get('/login', function(req, res, next) {
-  res.render('auth/signin');
+  // res.render('auth/signin');
+  res.json({message: " login please"})
 })
 
 

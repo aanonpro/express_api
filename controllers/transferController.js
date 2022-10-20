@@ -58,13 +58,13 @@ const deleteTransfer = async (req, res) => {
 
 const getTransfer = async (req, res) => {
 
-    // const user = await userModel.findOne();
+    const user = await userModel.findOne();
 
-    // // var user = await User.findOne({where: {id:req.params.id}});
-    // var transfer = await Transfer.findAll({where: {sender_id: user.id }});
+    // var user = await User.findOne({where: {id:req.params.id}});
+    var transfer = await transferModel.findAll({where: {sender_id: user.id }});
     
-    // res.render('./transfer',{transfer: transfer, user: user});
-    res.send('hi transfer');
+    res.render('./transfer',{transfer: transfer, user: user});
+    // res.send('hi transfer');
   
 }
 
