@@ -1,7 +1,6 @@
 const userModel = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-// const { restart } = require('nodemon');
 const SECRET_KEY = "NOTESAPI";
 
 const signup = async (req, res) => {

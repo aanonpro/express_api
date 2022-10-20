@@ -9,6 +9,9 @@ User.init({
         type: DataTypes.STRING,
         require: true,
     },
+    phone: {
+        type: DataTypes.STRING,
+    },
     email: {
         type: DataTypes.STRING,
         require: true,
@@ -17,6 +20,9 @@ User.init({
         type: DataTypes.STRING,
         require: true,
     },
+    balance: {
+        type: DataTypes.INTEGER
+    }
    
 }, {
 

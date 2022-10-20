@@ -11,4 +11,8 @@ noteRouter.delete('/:id', auth, deleteNote);
 
 noteRouter.put('/:id', auth, updateNote);
 
+noteRouter.get('/login', function(req, res, next) {
+    res.render('auth/signin');
+})
+
 module.exports = noteRouter;

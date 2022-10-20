@@ -12,14 +12,16 @@ const auth = (req, res, next) => {
             req.user_id = user.id;
         }
         else{
-            res.status(401).json({message: "Unauthorized User"});
+            // res.status(401).json({message: "Unauthorized User"});
+            res.redirect('/login');
         }
 
         next();
 
     } catch (error) {
         console.log(error);
-        res.status(401).json({message: "Unauthorized User"});
+        // res.status(401).json({message: "Unauthorized User"});
+        res.redirect('/login');
     }
 
 }

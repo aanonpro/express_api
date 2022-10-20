@@ -10,7 +10,7 @@ head
 .container
     h2.text-center Create Transaction
     a(href="/users" class="btn btn-primary ") Back
-    form(action='/transfer/store/'+auth.id  method='POST')
+    form(action='/transfer/store/' method='POST')
         .form-group
             label(for='recieve') Recieve Account
             input.form-control(type='number'  name='recieve' placeholder='Enter account number' autofocus required)
